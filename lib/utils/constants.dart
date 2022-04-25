@@ -4,7 +4,7 @@ import 'package:custom_github_app/presentation/pages/user_info_page.dart';
 import 'package:flutter/material.dart';
 
 abstract class Constants {
-  static const accessToken = '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';
+  static const accessToken = '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';
   static const baseUrl = 'https://api.github.com';
   static const userLogin = 'lulupotter1';
   static const users = 'users';

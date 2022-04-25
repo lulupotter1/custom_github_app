@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:custom_github_app/data/api/api_request.dart';
 import 'package:custom_github_app/data/model/repos_model.dart';
 import 'package:custom_github_app/data/model/user_model.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
 part 'github_event.dart';

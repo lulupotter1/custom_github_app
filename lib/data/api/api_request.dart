@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 
 class ApiRequest {
   final Dio _dio = Dio(BaseOptions(headers: {
-    'Authorization': 'token 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',
+    'Authorization': 'token ${Constants.accessToken}',
     'Accept': 'application/vnd.github.v3+json',
   }));
 
