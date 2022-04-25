@@ -1,4 +1,5 @@
 import 'package:custom_github_app/bloc/github_bloc.dart';
+import 'package:custom_github_app/data/hive_db.dart';
 import 'package:custom_github_app/presentation/widgets/custom_text_form_field.dart';
 import 'package:custom_github_app/presentation/widgets/default_body.dart';
 import 'package:custom_github_app/utils/constants.dart';
@@ -52,17 +53,16 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
               height: 16.h,
             ),
             CustomTextFromField(
-                isObscure: true,
-                hintText:
-                    'Password is "Test"(use token which saved in Constants)',
+                hintText: 'Введите Api Token',
                 controller: passwordController,
-                validator: Validator.validatePassword),
+                validator: Validator.validateEmptyText),
             SizedBox(
               height: 16.h,
             ),
             TextButton(
                 onPressed: () {
                   if (loginFormKey.currentState!.validate()) {
+                    HiveDb().editApiToken(passwordController.text);
                     BlocProvider.of<GithubBloc>(context).add(GetUserEvent());
                     BlocProvider.of<GithubBloc>(context)
                         .add(GetUserReposEvent());

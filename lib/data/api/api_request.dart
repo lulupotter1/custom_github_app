@@ -1,3 +1,4 @@
+import 'package:custom_github_app/data/hive_db.dart';
 import 'package:custom_github_app/data/model/repos_model.dart';
 import 'package:custom_github_app/data/model/user_model.dart';
 import 'package:custom_github_app/utils/constants.dart';
@@ -5,7 +6,7 @@ import 'package:dio/dio.dart';
 
 class ApiRequest {
   final Dio _dio = Dio(BaseOptions(headers: {
-    'Authorization': 'token ${Constants.accessToken}',
+    'Authorization': 'token ${HiveDb().getCurrToken}',
     'Accept': 'application/vnd.github.v3+json',
   }));
 
