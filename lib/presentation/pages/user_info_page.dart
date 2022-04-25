@@ -28,7 +28,7 @@ class UserPage extends StatelessWidget {
                 return false;
               },
               builder: (context, state) {
-                if (state is GithubUserReposError) {
+                if (state is GithubUserError) {
                   return Center(
                     child: Text(
                       state.errorMessage,
